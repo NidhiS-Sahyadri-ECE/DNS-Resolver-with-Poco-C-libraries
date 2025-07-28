@@ -1,0 +1,45 @@
+#include <iostream>
+#include <Poco/Net/DNS.h>
+#include <Poco/Net/HostEntry.h>
+#include <Poco/Exception.h>
+#include "DNSCache.h"
+
+using namespace Poco::Net;
+using namespace Poco;
+using namespace std;
+
+int main() {
+    DNSCache dnsCache;
+    string domain;
+
+    while (true) {
+        cout << "\nEnter domain (or 'exit'): ";
+        cin >> domain;
+        if (domain == "exit") break;
+
+        try {
+            if (dnsCache.has(domain)) {
+                cout << "[CACHE] IPs for " << domain << ":\n";
+                for (const auto& ip : dnsCache.get(domain)) {
+                    cout << " - " << ip.toString() << "\n";
+                }
+            } else {
+                HostEntry entry = DNS::hostByName(domain);
+                auto addresses = entry.addresses();
+                dnsCache.put(domain, addresses);
+
+                cout << "[LIVE] IPs for " << domain << ":\n";
+                for (const auto& ip : addresses) {
+                    cout << " - " << ip.toString() << "\n";
+                }
+            }
+        } catch (const Poco::Exception& ex) {
+            cerr << "DNS lookup failed: " << ex.displayText() << endl;
+        }
+    }
+
+    return 0;
+}
+
+
+
