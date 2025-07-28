@@ -1,1 +1,2 @@
-# DNS-Resolver-with-Poco-C-libraries
+DNS-Resolver-with-Poco-C-libraries
+This project implements a command-line DNS resolver in C++ using the Poco Net library. It takes a domain name as input and returns its corresponding IP address. The resolver features a simple caching mechanism to improve performance for repeated queries and includes error handling for invalid domains. The project demonstrates practical use of networking libraries, CMake build system, and modern C++ practices.
