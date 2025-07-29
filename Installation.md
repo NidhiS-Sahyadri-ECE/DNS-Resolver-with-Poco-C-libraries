@@ -4,7 +4,7 @@ Open the terminal:
 Start → MSYS2 UCRT64 (Important: use UCRT64, not the default shell)
 Update MSYS2 packages (run twice):
 pacman -Syu
-# Close and reopen terminal
+Close and reopen terminal
 pacman -Syu
 
 Install build tools and compiler:
