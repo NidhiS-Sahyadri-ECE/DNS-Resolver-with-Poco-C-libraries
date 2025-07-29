@@ -17,3 +17,5 @@ The fourth day focused on enabling recursive resolution capabilities, allowing t
 Day 5: Testing, Documentation, and Optimization
 The final day involved a complete evaluation of the DNS resolver’s performance and functionality. Test cases were written to simulate both normal and edge-case scenarios, including empty inputs, repeated queries (to test caching), and deep recursive lookups. The codebase was reviewed and optimized for performance, focusing on reducing memory usage and improving response times. The resolver’s logic was modularized and commented clearly for maintainability. Documentation was prepared, covering setup instructions, architecture overview, usage examples, and future improvement suggestions. Additionally, a summary presentation highlighting major design decisions, challenges like parsing DNS responses and recursive querying logic, and the strategies adopted for optimization was created.
 
+
+
