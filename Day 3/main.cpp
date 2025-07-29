@@ -2,14 +2,14 @@
 #include <Poco/Net/DNS.h>
 #include <Poco/Net/HostEntry.h>
 #include <Poco/Exception.h>
-#include "Cache.h"  // Your cache implementation
+#include "Cache.h"  
 
 using namespace Poco::Net;
 using namespace Poco;
 using namespace std;
 
 int main() {
-    Cache dnsCache;  // Use only one cache system (your own)
+    Cache dnsCache; 
     string domain;
 
     while (true) {
